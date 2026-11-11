@@ -4,9 +4,13 @@
 
 一个面向 AI Agent 的技能（skill），用于在 **Android Jetpack Compose** 中，借助 [Backdrop](https://github.com/Kyant0/AndroidLiquidGlass) 库（`io.github.kyant0:backdrop`）构建 Apple 风格的**液态玻璃**界面——把 source/surface 接线、effect stack、高光样式、对比度要求、性能预算，以及一份经过真机验证、可编译的参考实现，提炼成可以直接套用的规则。
 
-![真机效果图](assets/demo-backdrop.png)
+<p align="center">
+  <a href="assets/demo-backdrop.png">
+    <img src="assets/demo-backdrop.png" width="300" alt="真机效果图">
+  </a>
+</p>
 
-*真机截图（小米，Android 16）：玻璃按钮悬浮在滚动内容之上，底部是玻璃标签栏——两者都在折射身下的卡片。完全按本 skill 用 `backdrop:1.0.6` 渲染。*
+*真机截图（小米，Android 16）：玻璃按钮悬浮在滚动内容之上，底部是玻璃标签栏——两者都在折射身下的卡片。完全按本 skill 用 `backdrop:1.0.6` 渲染。点击查看原图。*
 
 > **一句话** —— Apple 的 Liquid Glass 不是"加个模糊"，而是**折射**：玻璃边缘让背后的内容弯折，高光沿边缘走，深度靠光而不是阴影表达。
 

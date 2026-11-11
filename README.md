@@ -4,9 +4,13 @@
 
 An agent skill for building Apple-style **liquid glass** surfaces in **Android Jetpack Compose** with the [Backdrop](https://github.com/Kyant0/AndroidLiquidGlass) library (`io.github.kyant0:backdrop`) — source/surface wiring, the effect stack, highlight styles, contrast requirements, performance budgets, and a device-verified reference implementation, distilled into rules you can apply directly.
 
-![Liquid Glass demo running on a physical device](assets/demo-backdrop.png)
+<p align="center">
+  <a href="assets/demo-backdrop.png">
+    <img src="assets/demo-backdrop.png" width="300" alt="Liquid Glass demo running on a physical device">
+  </a>
+</p>
 
-*Real device screenshot (Xiaomi, Android 16): a glass button floating over scrolling content and a glass bottom tab bar — both refracting the cards beneath them. Rendered entirely with `backdrop:1.0.6` following this skill.*
+*Real device screenshot (Xiaomi, Android 16): a glass button floating over scrolling content and a glass bottom tab bar — both refracting the cards beneath them. Rendered entirely with `backdrop:1.0.6` following this skill. Click to view full resolution.*
 
 > **TL;DR** — Apple's Liquid Glass is not "add a blur". It is **refraction**: the glass edge bends the content beneath it, highlights run along the rim, and depth is expressed with light instead of shadows.
 
