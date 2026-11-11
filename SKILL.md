@@ -2,7 +2,7 @@
 name: android-liquid-glass
 license: MIT
 compatibility: Requires a Gradle-based Android project using Jetpack Compose. No scripts, no network access, no binary tools. Works on any OS (verified on Windows); visual effect verified on a physical Android 16 device. Glass rendering needs RuntimeShader (API 33+) support on the device; the skill includes a fallback strategy.
-description: Build Apple-style "liquid glass" surfaces in Android Jetpack Compose with the Backdrop library (io.github.kyant0:backdrop). Use when adding translucent refracting chrome — glass buttons, toggles, sliders, bottom tab bars, nav bars, floating action layers — or when a glass surface renders as a flat rounded box, as a grey coin, shows no rim highlight, or crashes inside the draw pass. Covers layerBackdrop/drawBackdrop source-surface wiring, the effect stack (blur / lens / colorFilter / opacity), choosing HighlightStyle, performance budgeting, and graceful degradation on devices lacking RuntimeShader. 液态玻璃 / 玻璃拟态 / 折射玻璃 / 毛玻璃 / 玻璃质感 UI 也适用本技能。
+description: Build Apple-style liquid glass surfaces in Android Jetpack Compose with Backdrop (io.github.kyant0:backdrop). Use for glass buttons, toggles, sliders, tab bars, nav bars, floating layers, or when glass looks like a flat box, a grey coin, or crashes in the draw pass. Covers layerBackdrop/drawBackdrop wiring, the effect stack (blur/lens/colorFilter/opacity), HighlightStyle, perf budgets, RuntimeShader fallback. 液态玻璃 / 玻璃拟态 / 折射玻璃 / 毛玻璃 / 玻璃质感 UI 也适用。
 ---
 
 # Android Liquid Glass (Backdrop)
@@ -208,6 +208,20 @@ Modifier
 - **描边也用渐变**:顶部亮、底部几乎透明,才有玻璃边缘的"光边"感;纯色描边会显得是塑料贴纸
 - **alpha 不要太低**:在已经压暗的玻璃上,低于 0.25 的白色几乎看不出来
 
+## 进阶能力:交互玻璃与高级场景(按需深入)
+
+主文档(本文件)只覆盖**静态玻璃**。官方 Catalog 还有一整套"让玻璃活起来"的实现,已蒸馏成三份配方文档——**用户提出下列需求时,先读对应文档再动手**:
+
+| 用户想要 | 先读 | 内容 |
+|---|---|---|
+| 按压形变、拖拽跟随、松手回弹、光斑跟手指、速度交接(惯性) | `references/interactive-glass.md` | 三件套(DampedDragAnimation/InteractiveHighlight/observe-only 手势)机制 + layerBlock 形变公式 + 弹簧参数选型表 |
+| 复刻玻璃按钮/开关/滑块/标签栏 | `references/component-recipes.md` | 五个官方组件的配方卡 + **1.0.6 无 vibrancy 的兼容签名** + 双状态源同步等易错点 |
+| 控制中心(陀螺仪高光)、放大镜、自适应明暗玻璃、玻璃弹窗、渐进模糊、SDF 锁屏 | `references/scene-playbook.md` | 13 个演示场景的逐卡拆解:API 组合 + 核心思路 + 参数源文件索引 |
+
+**能力边界(诚实声明)**:
+- 交互玻璃与场景配方的**参数签名来自官方 Catalog(2.x)**;1.0.6 的兼容替代方案已在文档中标注,但 `interactive-glass.md` 的陀螺仪替代实现尚未真机验证(标为 open)。
+- SDF 纹理锁屏在 1.0.6 上**不可复刻**(依赖 2.x 的 surface 绘制钩子),文档里明确说了复刻到哪一层为止。
+
 ## 组件:库不提供,自己写
 
 README 明确写了 **"The library does not include any high-level components"**。官方示例 App 里有可直接参考/复制的实现(Apache-2.0):
@@ -288,8 +302,10 @@ val surfaceModifier = if (glassSupported) {
 ## 参考
 
 - **完整可运行示例**:`references/full-example.md` —— 工程配置(Gradle/AGP/Compose BOM/依赖坐标)+ 整页代码,真机 Android 16 验证过
+- **进阶配方**(见上方「进阶能力」一节):`references/interactive-glass.md` / `references/component-recipes.md` / `references/scene-playbook.md`
 - 仓库:https://github.com/Kyant0/AndroidLiquidGlass
 - 文档:https://kyant.gitbook.io/backdrop
+- 官方 Catalog 示例工程(配方出处,三模块可直接构建):仓库根 `app/` + `androidApp/`;预编译 APK 在 `androidApp/release/`
 - 许可:**Apache-2.0**(可商用;复制源码需保留声明 + LICENSE + 标注修改)
 
 ## 来源与许可
