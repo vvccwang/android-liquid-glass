@@ -1,8 +1,8 @@
 # android-liquid-glass
 
-一个面向 AI Agent 的技能（skill），用于在 **Android Jetpack Compose** 中，借助 [Backdrop](https://github.com/Kyant0/AndroidLiquidGlass) 库（`io.github.kyant0:backdrop`）构建 Apple 风格的**液态玻璃**界面。
+[English](README.md) | [简体中文](README.zh-CN.md)
 
-它把"折射玻璃 chrome"——玻璃导航栏、底部标签栏、悬浮按钮、播放条——提炼成可以直接套用的规则：source/surface 接线、effect stack、高光样式、对比度要求、性能预算，以及一份**经过真机验证、可编译**的完整参考实现。
+一个面向 AI Agent 的技能（skill），用于在 **Android Jetpack Compose** 中，借助 [Backdrop](https://github.com/Kyant0/AndroidLiquidGlass) 库（`io.github.kyant0:backdrop`）构建 Apple 风格的**液态玻璃**界面——把 source/surface 接线、effect stack、高光样式、对比度要求、性能预算，以及一份经过真机验证、可编译的参考实现，提炼成可以直接套用的规则。
 
 ![真机效果图](assets/demo-backdrop.png)
 
@@ -17,7 +17,7 @@
 | `SKILL.md` | 技能正文：心智模型、effect stack（已核对 API 签名）、三条铁律、高光样式、玻璃内"材质片"技法、降级策略、验收清单、症状速查 |
 | `references/full-example.md` | 完整可编译实现：Gradle/AGP/Compose BOM 配置 + 整页 Kotlin，真机（Android 16）验证过 |
 | `assets/demo-backdrop.png` | 参考实现的真实设备截图 |
-| `LICENSE` | MIT —— 允许免费商用 |
+| `LICENSE` | MIT |
 | `THIRD_PARTY_NOTICES.md` | Backdrop 库（Apache-2.0）的归属与许可说明 |
 | `README.md` / `README.zh-CN.md` | 本说明的英文版与中文版 |
 
@@ -78,7 +78,7 @@
 
 ## 许可
 
-本 skill 的文字与示例代码以 **MIT 协议**开源——允许免费使用与商用。见 [LICENSE](LICENSE)。
+本 skill 的文字与示例代码以 **MIT 协议**开源，见 [LICENSE](LICENSE)。
 
 [Backdrop 库](https://github.com/Kyant0/AndroidLiquidGlass)**不包含在**本仓库中、也**不由本仓库分发**；它遵循自身的 **Apache License 2.0**。详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 

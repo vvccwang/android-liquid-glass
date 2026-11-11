@@ -1,8 +1,8 @@
 # android-liquid-glass
 
-An agent skill for building Apple-style **liquid glass** surfaces in **Android Jetpack Compose** with the [Backdrop](https://github.com/Kyant0/AndroidLiquidGlass) library (`io.github.kyant0:backdrop`).
+[English](README.md) | [简体中文](README.zh-CN.md)
 
-It distills refracting chrome — glass nav bars, bottom tab bars, floating action buttons, play bars — into rules an AI agent (or you) can apply directly: source/surface wiring, the effect stack, highlight styles, contrast requirements, performance budgets, and a verified, compilable reference implementation.
+An agent skill for building Apple-style **liquid glass** surfaces in **Android Jetpack Compose** with the [Backdrop](https://github.com/Kyant0/AndroidLiquidGlass) library (`io.github.kyant0:backdrop`) — source/surface wiring, the effect stack, highlight styles, contrast requirements, performance budgets, and a device-verified reference implementation, distilled into rules you can apply directly.
 
 ![Liquid Glass demo running on a physical device](assets/demo-backdrop.png)
 
@@ -17,7 +17,7 @@ It distills refracting chrome — glass nav bars, bottom tab bars, floating acti
 | `SKILL.md` | The full skill: mental model, effect stack (verified API signatures), three iron rules, highlight styles, in-glass "material chip" technique, degradation, acceptance checklist, symptom lookup |
 | `references/full-example.md` | A complete, **machine-verifiable** implementation: Gradle/AGP/Compose BOM configuration + a full page of Kotlin, tested on a physical device (Android 16) |
 | `assets/demo-backdrop.png` | Real-device screenshot of the reference implementation |
-| `LICENSE` | MIT — free for commercial use |
+| `LICENSE` | MIT |
 | `THIRD_PARTY_NOTICES.md` | Attribution and license info for the Backdrop library (Apache-2.0) |
 | `README.md` / `README.zh-CN.md` | This doc, in English and Chinese |
 
@@ -78,7 +78,7 @@ Reproducibility check: a brand-new project following only this skill compiled on
 
 ## License
 
-This skill's text and example code are released under the **MIT License** — free to use, including commercial use. See [LICENSE](LICENSE).
+This skill's text and example code are released under the **MIT License**. See [LICENSE](LICENSE).
 
 The [Backdrop library](https://github.com/Kyant0/AndroidLiquidGlass) is **not** included in or redistributed by this repository; it stays under its own **Apache License 2.0**. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
